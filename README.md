@@ -49,4 +49,22 @@ Add your GitHub Pages link here after deployment.
 
 ## Screenshots
 
-Add screenshots here after testing and deployment.
+### Home / Category Selection
+
+![Quiz Home Screen](screenshots/quiz-home.png)
+
+### Quiz Gameplay
+
+![Quiz Gameplay Screen](screenshots/quiz-gameplay.png)
+
+### Results Screen
+
+![Quiz Results Screen](screenshots/quiz-results.png)
+
+### Answer Review
+
+![Quiz Review Screen](screenshots/quiz-review.png)
+
+### High Scores
+
+![High Scores Screen](screenshots/high-scores.png)
