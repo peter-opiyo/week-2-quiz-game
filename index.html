@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizMaster | Interactive Quiz Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <a href="#" class="brand" id="homeLink">🎯 QuizMaster</a>
+      <button class="ghost-button" id="highScoresBtn">High Scores</button>
+    </header>
+
+    <main>
+      <section class="screen active" id="homeScreen">
+        <div class="hero-card">
+          <p class="eyebrow">Weekend Project</p>
+          <h1>Interactive Quiz Game</h1>
+          <p class="hero-text">Pick a category, choose your difficulty, beat the 15-second timer, and try to enter the high-score board.</p>
+        </div>
+
+        <div class="controls-panel">
+          <label for="playerName">Player Name</label>
+          <input type="text" id="playerName" placeholder="Enter your name" maxlength="20">
+
+          <label for="difficultySelect">Difficulty</label>
+          <select id="difficultySelect">
+            <option value="medium">Medium — 15 seconds ×1.5</option>
+            <option value="easy">Easy — 20 seconds ×1</option>
+            <option value="hard">Hard — 10 seconds ×2</option>
+          </select>
+        </div>
+
+        <section class="category-grid" id="categoryGrid" aria-label="Quiz categories"></section>
+
+        <section class="scoreboard home-scoreboard">
+          <h2>Top High Scores</h2>
+          <div id="homeHighScores" class="scores-list"></div>
+        </section>
+      </section>
+
+      <section class="screen" id="quizScreen">
+        <div class="quiz-header">
+          <div>
+            <span class="mini-label">Category</span>
+            <strong id="quizCategory">Kenya Trivia</strong>
+          </div>
+          <div>
+            <span class="mini-label">Score</span>
+            <strong id="scoreDisplay">0/10</strong>
+          </div>
+          <div class="timer-wrap">
+            <span class="mini-label">Timer</span>
+            <strong id="timerDisplay">15</strong>
+          </div>
+        </div>
+
+        <div class="progress-area">
+          <div class="progress-meta">
+            <span id="questionCounter">Question 1 of 10</span>
+            <span id="difficultyBadge">Medium</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <article class="question-card slide-in">
+          <h2 id="questionText">Question text appears here</h2>
+          <div class="answers-grid" id="answersGrid"></div>
+        </article>
+      </section>
+
+      <section class="screen" id="resultsScreen">
+        <article class="results-card">
+          <p class="eyebrow">Quiz Complete</p>
+          <h1 id="finalScore">You scored 0/10!</h1>
+          <div class="grade-badge" id="gradeBadge">F</div>
+          <p id="resultMessage">Keep practicing!</p>
+
+          <div class="stats-grid">
+            <div><strong id="correctStat">0</strong><span>Correct</span></div>
+            <div><strong id="incorrectStat">0</strong><span>Incorrect</span></div>
+            <div><strong id="timeoutStat">0</strong><span>Timed Out</span></div>
+          </div>
+
+          <div class="button-row">
+            <button class="primary-button" id="reviewBtn">Review Answers</button>
+            <button class="secondary-button" id="playAgainBtn">Play Again</button>
+            <button class="ghost-button" id="chooseCategoryBtn">Choose Category</button>
+          </div>
+
+          <button class="share-button" id="shareScoreBtn">Share Score</button>
+          <p class="copy-message" id="copyMessage"></p>
+        </article>
+
+        <section class="scoreboard">
+          <h2>Top 5 Scores for This Category</h2>
+          <div id="categoryHighScores" class="scores-list"></div>
+        </section>
+      </section>
+
+      <section class="screen" id="reviewScreen">
+        <div class="review-header">
+          <div>
+            <p class="eyebrow">Answer Review</p>
+            <h1>Review Your Answers</h1>
+          </div>
+          <button class="secondary-button" id="backToResultsBtn">Back to Results</button>
+        </div>
+        <div class="review-list" id="reviewList"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
